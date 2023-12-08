@@ -1,0 +1,8 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: tls-certificate
+  namespace: contour-tls
+spec:
+  dnsNames:
+    - "*.full.tanzu.corby.page"
