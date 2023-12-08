@@ -1,16 +1,8 @@
 ---
-apiVersion: cert-manager.io/v1
-kind: Certificate
+apiVersion: v1
+kind: Namespace
 metadata:
-  name: tls-certificate
-  namespace: contour-tls
-spec:
-  secretName: tls
-  issuerRef:
-    # The issuer created previously
-    name: tls-issuer
-  dnsNames:
-    - "*.default.example.com"
+  name: contour-tls
 ---
 apiVersion: cert-manager.io/v1
 kind: Issuer

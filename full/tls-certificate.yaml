@@ -1,8 +1,13 @@
+---
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: tls-certificate
   namespace: contour-tls
 spec:
+  secretName: tls
+  issuerRef:
+    # The issuer created previously
+    name: tls-issuer
   dnsNames:
     - "*.full.tanzu.corby.page"
